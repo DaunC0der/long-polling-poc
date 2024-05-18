@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.acme</groupId>
-    <artifactId>getting-started-reactive</artifactId>
+    <artifactId>long-polling-poc</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
@@ -33,11 +33,11 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest</artifactId>
+            <artifactId>quarkus-rest-jackson</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-jackson</artifactId>
+            <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -80,10 +80,10 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <!-- RELEASE_VERSION -->
                 <version>6.6.0</version>
                 <configuration>
                     <generatorName>jaxrs-spec</generatorName>
@@ -93,9 +93,7 @@
                         <interfaceOnly>true</interfaceOnly>
                     </configOptions>
                     <templateDirectory>${project.basedir}/src/main/resources/templates</templateDirectory>
-<!--                    <library>quarkus</library>-->
                 </configuration>
-                <!-- /RELEASE_VERSION -->
                 <executions>
                     <execution>
                         <goals>
@@ -106,15 +104,13 @@
                             <configOptions>
                                 <useJakartaEe>true</useJakartaEe>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
-<!--                                <useMutiny>true</useMutiny>
-                                <supportAsync>true</supportAsync>-->
                             </configOptions>
                             <generateApis>true</generateApis>
-
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
