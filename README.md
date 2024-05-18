@@ -77,3 +77,11 @@ native executable:
 After getting a cup of coffee, you'll be able to run this executable directly:
 
 > ./target/getting-started-1.0.0-SNAPSHOT-runner
+
+# Mustache Files
+
+The mustache files are in the resource folder. To find the files see [github](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/JavaJaxRS)
+
+# Openapi Spec
+
+See openapi spec [here](https://openapi-generator.tech/docs/templating/)
